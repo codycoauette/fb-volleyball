@@ -60,10 +60,9 @@ get a still image with no autoplay.
 
 ## The logo
 
-`src/components/falcon-mark.tsx` is a placeholder mark (a winged volleyball in the
-team's red, navy and white) drawn as inline SVG. It is used in the header, footer and
-favicon at `src/app/icon.svg`. To use the school's official falcon logo, drop the
-artwork in `public/` and replace the `FalconMark` usages with a `next/image` reference.
+The official falcon mark lives at [`public/falcon-logo.png`](public/falcon-logo.png)
+and is rendered by [`src/components/falcon-mark.tsx`](src/components/falcon-mark.tsx)
+in the header and footer. The same artwork is the site favicon via `src/app/icon.png`.
 
 ## The donation portal
 

@@ -38,7 +38,7 @@ export async function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-2">
           <div className="flex items-center gap-3">
-            <FalconMark className="h-12 w-12" onDark />
+            <FalconMark className="h-14 w-14" />
             <div>
               <p className="font-heading text-lg font-bold tracking-tight text-white uppercase">
                 Fertile-Beltrami Falcons

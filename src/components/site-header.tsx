@@ -74,8 +74,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
         <Link href="/" className="flex items-center gap-3">
           <FalconMark
-            onDark={!scrolled}
-            className="h-11 w-11 shrink-0 transition-transform duration-300 hover:scale-105"
+            className="h-12 w-12 shrink-0 transition-transform duration-300 hover:scale-105 sm:h-14 sm:w-14"
           />
           <span className="leading-none">
             <span
