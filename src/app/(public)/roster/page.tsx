@@ -25,7 +25,7 @@ export default async function RosterPage() {
         photo={heroPhotos[3]}
         eyebrow={`${currentSeason} varsity squad`}
         title="Roster"
-        description={`${roster.length} players, three captains, and a staff that has coached together for most of a decade. Jersey numbers below match the printed program sold at the gate.`}
+        description={`${roster.length} varsity players for the ${currentSeason} season. Jersey numbers match the MSHSL roster.`}
       >
         <dl className="flex flex-wrap gap-x-10 gap-y-4">
           {Object.entries(byGrade).map(([grade, count]) => (

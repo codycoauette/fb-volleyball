@@ -35,10 +35,10 @@ export async function SeasonTabs() {
           description="Home matches in navy, road matches in light blue, neutral-site tournaments in red."
         />
         <TabsList>
-          <TabsTrigger value="current">{currentSeason} season</TabsTrigger>
-          <TabsTrigger value="previous">
-            {lastSeason} results ({seasonSnapshot.overall})
+          <TabsTrigger value="current">
+            {currentSeason} season ({seasonSnapshot.overall})
           </TabsTrigger>
+          <TabsTrigger value="previous">{lastSeason} results</TabsTrigger>
         </TabsList>
       </div>
 
@@ -48,18 +48,21 @@ export async function SeasonTabs() {
           highlightId={upcoming?.id}
           emptyMessage={`The ${currentSeason} schedule is still being finalized with the conference office.`}
         />
+        <p className="mt-4 text-sm text-muted-foreground">
+          {seasonSnapshot.note} Overall {seasonSnapshot.overall}, conference{" "}
+          {seasonSnapshot.conference} — see the{" "}
+          <a className="font-medium text-falcon-600 hover:underline" href="/history">
+            history page
+          </a>{" "}
+          for prior seasons.
+        </p>
       </TabsContent>
 
       <TabsContent value="previous" className="mt-8">
-        <MatchList matches={lastSeasonResults} />
-        <p className="mt-4 text-sm text-muted-foreground">
-          Conference and section matches shown; the {seasonSnapshot.overall} overall
-          record includes tournament pool play, which is summarized on the{" "}
-          <a className="font-medium text-falcon-600 hover:underline" href="/history">
-            history page
-          </a>
-          .
-        </p>
+        <MatchList
+          matches={lastSeasonResults}
+          emptyMessage={`${lastSeason} match results have not been posted here yet.`}
+        />
       </TabsContent>
     </Tabs>
   );
