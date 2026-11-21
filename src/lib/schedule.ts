@@ -1,4 +1,4 @@
-import type { Match } from "@/data/team";
+import type { Match } from "@/content/types";
 
 /** Parses an ISO date as a local calendar day so dates never shift by a timezone. */
 export function parseLocalDate(iso: string) {

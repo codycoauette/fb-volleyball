@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { designations, team } from "@/data/team";
+import type { Designation, TeamInfo } from "@/content/types";
 import { formatCurrency } from "@/lib/schedule";
 import { cn } from "@/lib/utils";
 
@@ -33,7 +33,13 @@ type Confirmation = {
   designation: string;
 };
 
-export function DonationForm() {
+export function DonationForm({
+  designations,
+  team,
+}: {
+  designations: Designation[];
+  team: TeamInfo;
+}) {
   const searchParams = useSearchParams();
   const fundParam = searchParams.get("fund");
   // The ?fund= param can arrive after the first render during a client-side

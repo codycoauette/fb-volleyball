@@ -15,7 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { team } from "@/data/team";
+import type { TeamInfo } from "@/content/types";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -34,7 +34,7 @@ function isScrolled() {
   return window.scrollY > 32;
 }
 
-export function SiteHeader() {
+export function SiteHeader({ team }: { team: TeamInfo }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   // Every page opens on a photo hero, so the bar floats over the image until

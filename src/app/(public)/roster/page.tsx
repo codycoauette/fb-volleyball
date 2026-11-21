@@ -4,14 +4,16 @@ import { PageHero, SectionHeading } from "@/components/page-hero";
 import { heroPhotos } from "@/data/photos";
 import { RosterGrid } from "@/components/roster-grid";
 import { Card, CardContent } from "@/components/ui/card";
-import { coaches, currentSeason, roster, team } from "@/data/team";
+import { getSiteContent } from "@/content/store";
+import { team as seedTeam } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "Roster",
-  description: `${currentSeason} varsity roster and coaching staff for ${team.program}.`,
+  description: `Varsity roster and coaching staff for ${seedTeam.program}.`,
 };
 
-export default function RosterPage() {
+export default async function RosterPage() {
+  const { coaches, currentSeason, roster, team } = await getSiteContent();
   const byGrade = roster.reduce<Record<string, number>>((acc, player) => {
     acc[player.grade] = (acc[player.grade] ?? 0) + 1;
     return acc;

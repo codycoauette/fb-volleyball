@@ -30,16 +30,33 @@ npm run lint    # eslint
 | `/history`     | Program records, season-by-season results, career leaderboards, milestones, honors                 |
 | `/fundraising` | Campaign goal meters, ways to give, sponsorship levels, event calendar, FAQ                        |
 | `/donate`      | Donation portal: amount presets, frequency, designation, donor details, employer match             |
+| `/portal`      | Coach content portal (password protected)                                                          |
 
-## Editing content
+## Coach portal
 
-Team info, roster, schedule, record book and fundraising data live in
-[`src/data/team.ts`](src/data/team.ts). Pages read from it, so posting new scores or a
-new roster is a data edit, not a code change.
+The coach can edit every piece of site content at [`/portal`](http://localhost:4319/portal)
+without touching code:
 
-**The content in that file is sample content.** Names, records, dates, contact details
-and dollar amounts are plausible placeholders, not real program data — replace them
-before the site goes public.
+- Team info (school, gym, contacts, tickets)
+- Roster and coaches
+- Schedule, last-season results, season snapshot
+- History & stats (records, seasons, leaders, milestones, honors)
+- Fundraising (campaigns, sponsor tiers, events, donate designations, FAQ)
+
+**Local password:** `falcons2027`  
+Set `PORTAL_PASSWORD` (and optionally `PORTAL_SECRET`) in the environment before going
+live.
+
+Saves go to [`data/site-content.json`](data/site-content.json). The public site reads
+that file on every request. Seed / fallback content still lives in
+[`src/data/team.ts`](src/data/team.ts).
+
+### Hooking up Supabase later
+
+The store is isolated in [`src/content/store.ts`](src/content/store.ts). Swap
+`readContent` / `writeContent` for Supabase queries (one `site_content` JSONB row, or
+one table per section) and keep the portal + public pages as they are. Auth in
+[`src/content/auth.ts`](src/content/auth.ts) can move to Supabase Auth the same way.
 
 ## Photos
 

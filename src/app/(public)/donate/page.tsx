@@ -8,12 +8,13 @@ import { GoalMeter } from "@/components/goal-meter";
 import { PageHero } from "@/components/page-hero";
 import { heroPhotos } from "@/data/photos";
 import { Card, CardContent } from "@/components/ui/card";
-import { campaigns, team } from "@/data/team";
+import { getSiteContent } from "@/content/store";
+import { team as seedTeam } from "@/data/team";
 import { formatCurrency } from "@/lib/schedule";
 
 export const metadata: Metadata = {
   title: "Donate",
-  description: `Support ${team.program} with a one-time or monthly gift.`,
+  description: `Support ${seedTeam.program} with a one-time or monthly gift.`,
 };
 
 const impact = [
@@ -24,7 +25,8 @@ const impact = [
   { amount: 100000, detail: "A banner in the gym and a season of sponsorship" },
 ];
 
-export default function DonatePage() {
+export default async function DonatePage() {
+  const { campaigns, designations, team } = await getSiteContent();
   const raised = campaigns.reduce((sum, c) => sum + c.raisedCents, 0);
   const goal = campaigns.reduce((sum, c) => sum + c.goalCents, 0);
 
@@ -64,7 +66,7 @@ export default function DonatePage() {
               </Card>
             }
           >
-            <DonationForm />
+            <DonationForm designations={designations} team={team} />
           </Suspense>
 
           <div className="space-y-4 lg:sticky lg:top-28">

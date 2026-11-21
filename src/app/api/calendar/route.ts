@@ -1,4 +1,4 @@
-import { currentSeason, schedule, team } from "@/data/team";
+import { getSiteContent } from "@/content/store";
 import { parseLocalDate } from "@/lib/schedule";
 
 function toIcsDate(iso: string) {
@@ -10,7 +10,9 @@ function escapeText(value: string) {
 }
 
 /** Serves the season as an all-day .ics feed so families can import the dates. */
-export function GET() {
+export async function GET() {
+  const { currentSeason, schedule, team } = await getSiteContent();
+
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",

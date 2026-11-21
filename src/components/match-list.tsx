@@ -1,7 +1,7 @@
 import { CalendarOffIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import type { Match } from "@/data/team";
+import type { Match } from "@/content/types";
 import { formatMatchDate, parseLocalDate } from "@/lib/schedule";
 import { cn } from "@/lib/utils";
 

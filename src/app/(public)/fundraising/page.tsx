@@ -21,19 +21,14 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  campaigns,
-  fundraisingEvents,
-  fundraisingFaq,
-  sponsorTiers,
-  team,
-} from "@/data/team";
+import { getSiteContent } from "@/content/store";
+import { team as seedTeam } from "@/data/team";
 import { formatCurrency } from "@/lib/schedule";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Fundraising",
-  description: `Campaigns, sponsorships and events supporting ${team.program}.`,
+  description: `Campaigns, sponsorships and events supporting ${seedTeam.program}.`,
 };
 
 const waysToGive = [
@@ -63,7 +58,8 @@ const waysToGive = [
   },
 ];
 
-export default function FundraisingPage() {
+export default async function FundraisingPage() {
+  const { campaigns, fundraisingEvents, fundraisingFaq, sponsorTiers, team } = await getSiteContent();
   const raised = campaigns.reduce((sum, c) => sum + c.raisedCents, 0);
   const goal = campaigns.reduce((sum, c) => sum + c.goalCents, 0);
   const open = campaigns.filter((c) => c.raisedCents < c.goalCents).length;

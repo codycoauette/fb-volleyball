@@ -1,0 +1,80 @@
+import {
+  campaigns,
+  careerLeaders,
+  coaches,
+  currentSeason,
+  designations,
+  fundraisingEvents,
+  fundraisingFaq,
+  honors,
+  lastSeason,
+  lastSeasonResults,
+  programMilestones,
+  programRecords,
+  quickLinks,
+  roster,
+  schedule,
+  seasonHistory,
+  seasonSnapshot,
+  sponsorTiers,
+  team,
+} from "@/data/team";
+import type {
+  Campaign,
+  Coach,
+  Designation,
+  FaqItem,
+  FundraisingEvent,
+  HonorYear,
+  LeaderBoard,
+  Match,
+  Milestone,
+  Player,
+  ProgramRecord,
+  QuickLink,
+  SeasonRow,
+  SeasonSnapshot,
+  SiteContent,
+  SponsorTier,
+  TeamInfo,
+} from "@/content/types";
+
+/** Built-in sample content. Used until the portal (or Supabase) writes an override. */
+export function getSeedContent(): SiteContent {
+  return {
+    version: 1,
+    updatedAt: "2026-11-21T00:00:00.000Z",
+    team: { ...team } as TeamInfo,
+    coaches: coaches.map((c) => ({ ...c })) as Coach[],
+    roster: roster.map((p) => ({ ...p })) as Player[],
+    currentSeason,
+    schedule: structuredClone(schedule) as Match[],
+    lastSeason,
+    lastSeasonResults: structuredClone(lastSeasonResults) as Match[],
+    seasonSnapshot: { ...seasonSnapshot } as SeasonSnapshot,
+    programRecords: programRecords.map((r) => ({ ...r })) as ProgramRecord[],
+    seasonHistory: seasonHistory.map((r) => ({ ...r })) as SeasonRow[],
+    careerLeaders: careerLeaders.map((board) => ({
+      category: board.category,
+      rows: board.rows.map((row) => ({ ...row })),
+    })) as LeaderBoard[],
+    programMilestones: programMilestones.map((m) => ({
+      ...m,
+    })) as Milestone[],
+    honors: honors.map((h) => ({
+      season: h.season,
+      items: [...h.items],
+    })) as HonorYear[],
+    campaigns: campaigns.map((c) => ({ ...c })) as Campaign[],
+    sponsorTiers: sponsorTiers.map((t) => ({
+      ...t,
+      perks: [...t.perks],
+    })) as SponsorTier[],
+    fundraisingEvents: fundraisingEvents.map((e) => ({
+      ...e,
+    })) as FundraisingEvent[],
+    designations: designations.map((d) => ({ ...d })) as Designation[],
+    fundraisingFaq: fundraisingFaq.map((f) => ({ ...f })) as FaqItem[],
+    quickLinks: quickLinks.map((l) => ({ ...l })) as QuickLink[],
+  };
+}

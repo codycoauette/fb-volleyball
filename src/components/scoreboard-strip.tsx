@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { connection } from "next/server";
 import { ArrowRightIcon, MapPinIcon } from "lucide-react";
 
-import { lastSeason, lastSeasonResults, schedule, seasonSnapshot } from "@/data/team";
+import { getSiteContent } from "@/content/store";
 import { formatMatchDate, nextMatch } from "@/lib/schedule";
 
 export function ScoreboardStripSkeleton() {
@@ -16,8 +15,12 @@ export function ScoreboardStripSkeleton() {
 }
 
 export async function ScoreboardStrip() {
-  // "Next match" is relative to today.
-  await connection();
+  const {
+    schedule,
+    lastSeason,
+    lastSeasonResults,
+    seasonSnapshot,
+  } = await getSiteContent();
 
   const upcoming = nextMatch(schedule);
   const lastResult = lastSeasonResults.filter((match) => match.result).at(-1);

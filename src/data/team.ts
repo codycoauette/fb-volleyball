@@ -1,9 +1,19 @@
 /**
- * All site content lives here so coaches and parent volunteers can update the
- * site without touching page code. Everything below is sample content modeled
- * on a Section 8A Class A program — replace it with the real roster, schedule,
- * record book and campaign numbers.
+ * Seed / sample content for the Falcons site.
+ *
+ * Coaches edit the live copy through `/portal` — those saves land in
+ * `data/site-content.json` (and later Supabase). This file stays as the
+ * built-in fallback until the first portal save.
  */
+
+export type {
+  Campaign,
+  Grade,
+  Match,
+  MatchResult,
+  Player,
+  SponsorTier,
+} from "@/content/types";
 
 export const team = {
   school: "Fertile-Beltrami High School",
@@ -39,19 +49,7 @@ export const coaches = [
   },
 ] as const;
 
-export type Grade = "Senior" | "Junior" | "Sophomore" | "Freshman" | "8th Grade";
-
-export type Player = {
-  number: number;
-  name: string;
-  grade: Grade;
-  position: string;
-  height: string;
-  captain?: boolean;
-  note?: string;
-};
-
-export const roster: Player[] = [
+export const roster = [
   {
     number: 1,
     name: "Avery Lindgren",
@@ -159,27 +157,9 @@ export const roster: Player[] = [
   },
 ];
 
-export type MatchResult = {
-  outcome: "W" | "L";
-  sets: string[];
-  note?: string;
-};
-
-export type Match = {
-  id: string;
-  /** ISO date, local to Fertile. */
-  date: string;
-  time: string;
-  opponent: string;
-  site: "Home" | "Away" | "Neutral";
-  venue?: string;
-  type: "Conference" | "Non-conference" | "Tournament" | "Section";
-  result?: MatchResult;
-};
-
 export const currentSeason = "2027";
 
-export const schedule: Match[] = [
+export const schedule = [
   {
     id: "2027-08-26-clearbrook-gonvick",
     date: "2027-08-26",
@@ -301,7 +281,7 @@ export const schedule: Match[] = [
 
 export const lastSeason = "2026";
 
-export const lastSeasonResults: Match[] = [
+export const lastSeasonResults = [
   {
     id: "2026-08-27-clearbrook-gonvick",
     date: "2026-08-27",
@@ -512,16 +492,7 @@ export const honors = [
   { season: "2024", items: ["Hallie Myrom — All-Conference", "Team — Section 8A Sportsmanship Award"] },
 ] as const;
 
-export type Campaign = {
-  id: string;
-  name: string;
-  goalCents: number;
-  raisedCents: number;
-  summary: string;
-  closes: string;
-};
-
-export const campaigns: Campaign[] = [
+export const campaigns = [
   {
     id: "uniforms",
     name: "2027 Uniform Replacement",
@@ -560,14 +531,7 @@ export const campaigns: Campaign[] = [
   },
 ];
 
-export type SponsorTier = {
-  name: string;
-  amount: string;
-  perks: string[];
-  featured?: boolean;
-};
-
-export const sponsorTiers: SponsorTier[] = [
+export const sponsorTiers = [
   {
     name: "Falcon Circle",
     amount: "$1,000+",

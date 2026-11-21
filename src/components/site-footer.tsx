@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 
 import { FalconMark } from "@/components/falcon-mark";
-import { team } from "@/data/team";
+import type { TeamInfo } from "@/content/types";
 
 /** Cached so the copyright year does not make every page render per request. */
 async function copyrightYear() {
@@ -29,7 +29,7 @@ const columns = [
   },
 ];
 
-export async function SiteFooter() {
+export async function SiteFooter({ team }: { team: TeamInfo }) {
   const year = await copyrightYear();
 
   return (
@@ -94,8 +94,11 @@ export async function SiteFooter() {
             © {year} {team.school} Volleyball Booster Club.
           </p>
           <p>
-            Roster, schedule and record book on this site are sample content pending
-            review by the activities office.
+            <Link className="hover:text-white" href="/portal">
+              Coach portal
+            </Link>
+            {" · "}
+            Content is editable by the coaching staff.
           </p>
         </div>
       </div>

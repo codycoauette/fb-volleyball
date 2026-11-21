@@ -7,14 +7,16 @@ import { heroPhotos } from "@/data/photos";
 import { SeasonTabs, SeasonTabsSkeleton } from "@/components/season-tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { currentSeason, lastSeason, schedule, team } from "@/data/team";
+import { getSiteContent } from "@/content/store";
+import { team as seedTeam } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "Schedule",
-  description: `${currentSeason} match schedule and ${lastSeason} results for ${team.program}.`,
+  description: `Match schedule and results for ${seedTeam.program}.`,
 };
 
-export default function SchedulePage() {
+export default async function SchedulePage() {
+  const { currentSeason, schedule, team } = await getSiteContent();
   const homeMatches = schedule.filter((match) => match.site === "Home").length;
 
   return (

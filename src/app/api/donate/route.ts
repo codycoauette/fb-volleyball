@@ -1,4 +1,4 @@
-import { designations } from "@/data/team";
+import { getSiteContent } from "@/content/store";
 
 export type PledgeRequest = {
   amountCents: number;
@@ -33,7 +33,10 @@ let pledgeCounter = 0;
 const MIN_CENTS = 500;
 const MAX_CENTS = 2_500_000;
 
-function validate(body: unknown) {
+function validate(
+  body: unknown,
+  designations: { value: string }[],
+) {
   const errors: Record<string, string> = {};
   const data = (body ?? {}) as Partial<PledgeRequest>;
 
@@ -78,7 +81,8 @@ export async function POST(request: Request) {
     return Response.json({ error: "Expected a JSON body." }, { status: 400 });
   }
 
-  const { errors, data } = validate(body);
+  const { designations } = await getSiteContent();
+  const { errors, data } = validate(body, designations);
   if (Object.keys(errors).length > 0) {
     return Response.json({ errors }, { status: 422 });
   }

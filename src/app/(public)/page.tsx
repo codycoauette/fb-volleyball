@@ -22,7 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { galleryPhotos, heroPhotos } from "@/data/photos";
-import { campaigns, quickLinks, roster, seasonSnapshot, team } from "@/data/team";
+import { getSiteContent } from "@/content/store";
 
 const icons = {
   "/schedule": CalendarDaysIcon,
@@ -31,7 +31,8 @@ const icons = {
   "/fundraising": HeartIcon,
 } as const;
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { campaigns, quickLinks, roster, seasonSnapshot, team } = await getSiteContent();
   const featured = campaigns[0];
   const seniors = roster.filter((player) => player.grade === "Senior").length;
 

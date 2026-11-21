@@ -13,21 +13,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  careerLeaders,
-  honors,
-  programMilestones,
-  programRecords,
-  seasonHistory,
-  team,
-} from "@/data/team";
+import { getSiteContent } from "@/content/store";
+import { team as seedTeam } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "History & Stats",
-  description: `Record book, season-by-season results and career leaders for ${team.program}.`,
+  description: `Record book, season-by-season results and career leaders for ${seedTeam.program}.`,
 };
 
-export default function HistoryPage() {
+export default async function HistoryPage() {
+  const {
+    careerLeaders,
+    honors,
+    programMilestones,
+    programRecords,
+    seasonHistory,
+  } = await getSiteContent();
   const totals = seasonHistory.reduce(
     (acc, season) => {
       const [wins, losses] = season.overall.split("-").map(Number);

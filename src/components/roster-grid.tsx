@@ -15,7 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { Player } from "@/data/team";
+import type { Player } from "@/content/types";
 import { cn } from "@/lib/utils";
 
 const groups = ["All", "Hitters", "Setters", "Defense", "Seniors"] as const;

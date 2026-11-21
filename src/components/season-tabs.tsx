@@ -1,15 +1,7 @@
-import { connection } from "next/server";
-
 import { MatchList } from "@/components/match-list";
 import { SectionHeading } from "@/components/page-hero";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  currentSeason,
-  lastSeason,
-  lastSeasonResults,
-  schedule,
-  seasonSnapshot,
-} from "@/data/team";
+import { getSiteContent } from "@/content/store";
 import { nextMatch } from "@/lib/schedule";
 
 export function SeasonTabsSkeleton() {
@@ -24,8 +16,13 @@ export function SeasonTabsSkeleton() {
 }
 
 export async function SeasonTabs() {
-  // The "next up" badge is relative to today.
-  await connection();
+  const {
+    schedule,
+    currentSeason,
+    lastSeason,
+    lastSeasonResults,
+    seasonSnapshot,
+  } = await getSiteContent();
 
   const upcoming = nextMatch(schedule);
 
