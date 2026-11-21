@@ -35,6 +35,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${barlowCondensed.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Scroll-reveal sections stay hidden without JavaScript otherwise. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="flex min-h-full flex-col bg-background">
         <SiteHeader />
         <main className="flex-1">{children}</main>

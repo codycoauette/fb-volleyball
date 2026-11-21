@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { DownloadIcon, InfoIcon } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
+import { heroPhotos } from "@/data/photos";
 import { SeasonTabs, SeasonTabsSkeleton } from "@/components/season-tabs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +20,7 @@ export default function SchedulePage() {
   return (
     <>
       <PageHero
+        photo={heroPhotos[0]}
         eyebrow="Falcons volleyball"
         title={`${currentSeason} Schedule`}
         description={`${schedule.length} dates, ${homeMatches} of them in ${team.gym}. Conference matches start at 7:15 PM with JV at 6:15. Dates move when the weather does — check back the week of the match.`}

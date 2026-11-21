@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AwardIcon } from "lucide-react";
 
 import { PageHero, SectionHeading } from "@/components/page-hero";
+import { heroPhotos } from "@/data/photos";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -39,31 +40,32 @@ export default function HistoryPage() {
   return (
     <>
       <PageHero
+        photo={heroPhotos[2]}
         eyebrow="Record book"
         title="History & Stats"
         description="Program records, season-by-season results, career leaders and postseason finishes. Numbers come from match books kept by the coaching staff and student statisticians."
       >
         <dl className="grid grid-cols-2 gap-x-10 gap-y-5 sm:flex sm:flex-wrap">
           <div>
-            <dt className="eyebrow text-falcon-300">Seasons listed</dt>
+            <dt className="eyebrow text-falcon-200">Seasons listed</dt>
             <dd className="font-heading text-3xl font-bold tabular-nums">
               {seasonHistory.length}
             </dd>
           </div>
           <div>
-            <dt className="eyebrow text-falcon-300">Wins in those seasons</dt>
+            <dt className="eyebrow text-falcon-200">Wins in those seasons</dt>
             <dd className="font-heading text-3xl font-bold tabular-nums">
               {totals.wins}
             </dd>
           </div>
           <div>
-            <dt className="eyebrow text-falcon-300">Winning percentage</dt>
+            <dt className="eyebrow text-falcon-200">Winning percentage</dt>
             <dd className="font-heading text-3xl font-bold tabular-nums">
               {winPct.toFixed(1)}%
             </dd>
           </div>
           <div>
-            <dt className="eyebrow text-falcon-300">State tournament trips</dt>
+            <dt className="eyebrow text-falcon-200">State tournament trips</dt>
             <dd className="font-heading text-3xl font-bold tabular-nums">1</dd>
           </div>
         </dl>

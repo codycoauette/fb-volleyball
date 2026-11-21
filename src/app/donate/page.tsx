@@ -6,6 +6,7 @@ import { CreditCardIcon, InfoIcon, ShieldCheckIcon } from "lucide-react";
 import { DonationForm } from "@/components/donation-form";
 import { GoalMeter } from "@/components/goal-meter";
 import { PageHero } from "@/components/page-hero";
+import { heroPhotos } from "@/data/photos";
 import { Card, CardContent } from "@/components/ui/card";
 import { campaigns, team } from "@/data/team";
 import { formatCurrency } from "@/lib/schedule";
@@ -30,6 +31,7 @@ export default function DonatePage() {
   return (
     <>
       <PageHero
+        photo={heroPhotos[1]}
         eyebrow="Donation portal"
         title="Give to Falcon Volleyball"
         description="One-time or monthly, designated or general. Gifts go to the volleyball activity account at Fertile-Beltrami High School and are spent by the booster club on the needs listed on the fundraising page."

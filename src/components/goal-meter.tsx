@@ -29,7 +29,7 @@ export function GoalMeter({
         <span
           className={cn(
             "text-sm font-semibold tabular-nums",
-            onDark ? "text-navy-200" : "text-muted-foreground",
+            onDark ? "text-white/80" : "text-muted-foreground",
           )}
         >
           of {formatCurrency(goalCents)}
@@ -38,7 +38,7 @@ export function GoalMeter({
       <div
         className={cn(
           "mt-2 h-2.5 w-full overflow-hidden rounded-full",
-          onDark ? "bg-white/15" : "bg-navy-100",
+          onDark ? "bg-white/20" : "bg-navy-100",
         )}
         role="progressbar"
         aria-valuenow={pct}
@@ -57,7 +57,7 @@ export function GoalMeter({
       <p
         className={cn(
           "mt-2 text-xs font-medium",
-          onDark ? "text-navy-200" : "text-muted-foreground",
+          onDark ? "text-white/75" : "text-muted-foreground",
         )}
       >
         {complete

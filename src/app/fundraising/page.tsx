@@ -11,6 +11,7 @@ import {
 
 import { GoalMeter } from "@/components/goal-meter";
 import { PageHero, SectionHeading } from "@/components/page-hero";
+import { heroPhotos } from "@/data/photos";
 import {
   Accordion,
   AccordionContent,
@@ -71,6 +72,7 @@ export default function FundraisingPage() {
   return (
     <>
       <PageHero
+        photo={heroPhotos[1]}
         eyebrow="Falcon volleyball booster club"
         title="Support the Falcons"
         description="Gate receipts cover officials and bus fuel. Everything else — uniforms, tournament entries, the serving machine in the practice gym, the senior scholarship — comes from this community."

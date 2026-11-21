@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { PageHero, SectionHeading } from "@/components/page-hero";
+import { heroPhotos } from "@/data/photos";
 import { RosterGrid } from "@/components/roster-grid";
 import { Card, CardContent } from "@/components/ui/card";
 import { coaches, currentSeason, roster, team } from "@/data/team";
@@ -19,6 +20,7 @@ export default function RosterPage() {
   return (
     <>
       <PageHero
+        photo={heroPhotos[3]}
         eyebrow={`${currentSeason} varsity squad`}
         title="Roster"
         description={`${roster.length} players, three captains, and a staff that has coached together for most of a decade. Jersey numbers below match the printed program sold at the gate.`}
@@ -26,7 +28,13 @@ export default function RosterPage() {
         <dl className="flex flex-wrap gap-x-10 gap-y-4">
           {Object.entries(byGrade).map(([grade, count]) => (
             <div key={grade}>
-              <dt className="eyebrow text-falcon-300">{grade}s</dt>
+              <dt className="eyebrow text-falcon-200">
+                {grade === "Freshman"
+                  ? "Freshmen"
+                  : grade === "Sophomore"
+                    ? "Sophomores"
+                    : `${grade}s`}
+              </dt>
               <dd className="font-heading text-3xl font-bold tabular-nums">
                 {count}
               </dd>
