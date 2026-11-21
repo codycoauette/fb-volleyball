@@ -53,7 +53,7 @@ export default async function HomePage() {
     <>
       <HeroCarousel
         photos={heroPhotos}
-        badge={`${seasonSnapshot.overall} and a section semifinal in ${seasonSnapshot.season}`}
+        badge={`${seasonSnapshot.overall} · ${seasonSnapshot.finish} · ${seasonSnapshot.season}`}
       />
 
       <Suspense fallback={<ScoreboardStripSkeleton />}>
