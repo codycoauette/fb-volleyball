@@ -26,6 +26,9 @@ export type Pledge = PledgeRequest & {
  * database are connected.
  */
 const pledges: Pledge[] = [];
+/** Cap the store so repeated posts cannot grow memory without bound. */
+const MAX_STORED_PLEDGES = 500;
+let pledgeCounter = 0;
 
 const MIN_CENTS = 500;
 const MAX_CENTS = 2_500_000;
@@ -80,16 +83,21 @@ export async function POST(request: Request) {
     return Response.json({ errors }, { status: 422 });
   }
 
+  pledgeCounter += 1;
+
   const pledge: Pledge = {
     ...data,
     donorName: data.donorName.trim(),
     email: data.email.trim(),
-    id: `FBV-${new Date().getFullYear()}-${String(pledges.length + 1).padStart(4, "0")}`,
+    id: `FBV-${new Date().getFullYear()}-${String(pledgeCounter).padStart(4, "0")}`,
     createdAt: new Date().toISOString(),
     status: "recorded",
   };
 
   pledges.push(pledge);
+  if (pledges.length > MAX_STORED_PLEDGES) {
+    pledges.splice(0, pledges.length - MAX_STORED_PLEDGES);
+  }
 
   return Response.json(
     {
@@ -108,9 +116,10 @@ export async function POST(request: Request) {
   );
 }
 
+/** Aggregate only — pledge records hold donor details and are never served. */
 export function GET() {
   return Response.json({
-    count: pledges.length,
+    count: pledgeCounter,
     totalCents: pledges.reduce((sum, pledge) => sum + pledge.amountCents, 0),
   });
 }
