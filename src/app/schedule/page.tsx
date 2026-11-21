@@ -21,7 +21,7 @@ export default function SchedulePage() {
       <PageHero
         eyebrow="Falcons volleyball"
         title={`${currentSeason} Schedule`}
-        description={`Thirteen dates, ${homeMatches} of them in ${team.gym}. Conference matches start at 7:15 PM with JV at 6:15. Dates move when the weather does — check back the week of the match.`}
+        description={`${schedule.length} dates, ${homeMatches} of them in ${team.gym}. Conference matches start at 7:15 PM with JV at 6:15. Dates move when the weather does — check back the week of the match.`}
       >
         <div className="flex flex-wrap gap-3">
           <Button

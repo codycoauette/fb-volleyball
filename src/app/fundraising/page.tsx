@@ -65,6 +65,8 @@ const waysToGive = [
 export default function FundraisingPage() {
   const raised = campaigns.reduce((sum, c) => sum + c.raisedCents, 0);
   const goal = campaigns.reduce((sum, c) => sum + c.goalCents, 0);
+  const open = campaigns.filter((c) => c.raisedCents < c.goalCents).length;
+  const funded = campaigns.length - open;
 
   return (
     <>
@@ -303,8 +305,9 @@ export default function FundraisingPage() {
                 {formatCurrency(raised)}
               </p>
               <p className="mt-2 text-sm text-navy-200">
-                Across {campaigns.length} active campaigns, from{" "}
-                {formatCurrency(2500)} gifts to {formatCurrency(100000)} sponsorships.
+                Across {open} open {open === 1 ? "campaign" : "campaigns"} and{" "}
+                {funded} already funded, from {formatCurrency(2500)} gifts to{" "}
+                {formatCurrency(100000)} sponsorships.
               </p>
               <Button
                 asChild

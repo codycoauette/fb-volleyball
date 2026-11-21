@@ -404,7 +404,7 @@ export const seasonSnapshot = {
   overall: "19-9",
   conference: "9-3",
   finish: "Section 8A semifinalist",
-  note: "Second straight 18-win season.",
+  note: "A second straight season of at least 18 wins.",
 } as const;
 
 export const programRecords = [
@@ -500,7 +500,7 @@ export const programMilestones = [
   },
   {
     year: "2026",
-    title: "Back-to-back 18-win seasons",
+    title: "19 wins and a section semifinal",
     detail:
       "Three all-conference selections and a program record 912 assists from the setter position.",
   },

@@ -40,16 +40,6 @@ export function nextMatch(matches: Match[], now = new Date()) {
   );
 }
 
-export function recordFromResults(matches: Match[]) {
-  let wins = 0;
-  let losses = 0;
-  for (const match of matches) {
-    if (match.result?.outcome === "W") wins += 1;
-    if (match.result?.outcome === "L") losses += 1;
-  }
-  return { wins, losses, label: `${wins}-${losses}` };
-}
-
 export function formatCurrency(cents: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",

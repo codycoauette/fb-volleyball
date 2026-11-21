@@ -8,8 +8,9 @@ import {
   lastSeason,
   lastSeasonResults,
   schedule,
+  seasonSnapshot,
 } from "@/data/team";
-import { nextMatch, recordFromResults } from "@/lib/schedule";
+import { nextMatch } from "@/lib/schedule";
 
 export function SeasonTabsSkeleton() {
   return (
@@ -27,7 +28,6 @@ export async function SeasonTabs() {
   await connection();
 
   const upcoming = nextMatch(schedule);
-  const lastRecord = recordFromResults(lastSeasonResults);
 
   return (
     <Tabs defaultValue="current">
@@ -40,7 +40,7 @@ export async function SeasonTabs() {
         <TabsList>
           <TabsTrigger value="current">{currentSeason} season</TabsTrigger>
           <TabsTrigger value="previous">
-            {lastSeason} results ({lastRecord.label})
+            {lastSeason} results ({seasonSnapshot.overall})
           </TabsTrigger>
         </TabsList>
       </div>
@@ -56,8 +56,8 @@ export async function SeasonTabs() {
       <TabsContent value="previous" className="mt-8">
         <MatchList matches={lastSeasonResults} />
         <p className="mt-4 text-sm text-muted-foreground">
-          Conference and section matches shown. Tournament pool play is summarized on
-          the{" "}
+          Conference and section matches shown; the {seasonSnapshot.overall} overall
+          record includes tournament pool play, which is summarized on the{" "}
           <a className="font-medium text-falcon-600 hover:underline" href="/history">
             history page
           </a>
