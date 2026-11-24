@@ -17,6 +17,7 @@ import type {
   ProgramRecord,
   SeasonRow,
 } from "@/content/types";
+import { RECORD_SCOPES } from "@/content/types";
 
 export function HistoryEditor({
   initialRecords,
@@ -54,8 +55,7 @@ export function HistoryEditor({
             History & stats
           </h1>
           <p className="text-sm text-muted-foreground">
-            Program records, year-by-year results, career leaders, milestones and
-            honors.
+            Career top 10s, season and single-game records, and honors.
           </p>
         </div>
         <Button
@@ -89,7 +89,13 @@ export function HistoryEditor({
               onClick={() =>
                 setRecords((current) => [
                   ...current,
-                  { label: "", value: "", holder: "", year: "" },
+                  {
+                    label: "",
+                    value: "",
+                    holder: "",
+                    year: "",
+                    scope: "season",
+                  },
                 ])
               }
             >
@@ -100,11 +106,11 @@ export function HistoryEditor({
           {records.map((record, index) => (
             <div
               key={index}
-              className="grid gap-3 rounded-xl border p-4 sm:grid-cols-[1.3fr_0.7fr_1fr_0.6fr_auto]"
+              className="grid gap-3 rounded-xl border p-4 sm:grid-cols-[1fr_0.7fr_1fr_0.6fr_0.8fr_auto]"
             >
               {(
                 [
-                  ["label", "Label"],
+                  ["label", "Stat"],
                   ["value", "Value"],
                   ["holder", "Holder"],
                   ["year", "Year"],
@@ -127,6 +133,31 @@ export function HistoryEditor({
                   />
                 </div>
               ))}
+              <div>
+                <Label>Scope</Label>
+                <select
+                  className="mt-1.5 flex h-10 w-full rounded-md border border-input bg-transparent px-3 text-sm"
+                  value={record.scope}
+                  onChange={(event) =>
+                    setRecords((current) =>
+                      current.map((row, i) =>
+                        i === index
+                          ? {
+                              ...row,
+                              scope: event.target.value as ProgramRecord["scope"],
+                            }
+                          : row,
+                      ),
+                    )
+                  }
+                >
+                  {RECORD_SCOPES.map((scope) => (
+                    <option key={scope} value={scope}>
+                      {scope === "season" ? "Season" : "Single game"}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="flex items-end">
                 <Button
                   variant="outline"

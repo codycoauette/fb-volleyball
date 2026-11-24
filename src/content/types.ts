@@ -61,12 +61,18 @@ export type SeasonSnapshot = {
   note: string;
 };
 
+export type RecordScope = "season" | "match";
+
 export type ProgramRecord = {
   label: string;
   value: string;
   holder: string;
   year: string;
+  /** Season totals vs. single-match marks. */
+  scope: RecordScope;
 };
+
+export const RECORD_SCOPES: RecordScope[] = ["season", "match"];
 
 export type SeasonRow = {
   season: string;

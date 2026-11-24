@@ -713,14 +713,83 @@ export const seasonSnapshot = {
 } as const;
 
 export const programRecords = [
-  { label: "Kills, single match", value: "31", holder: "Kari Sundby", year: "2014" },
-  { label: "Kills, season", value: "487", holder: "Kari Sundby", year: "2014" },
-  { label: "Assists, season", value: "912", holder: "Avery Lindgren", year: "2026" },
-  { label: "Digs, single match", value: "42", holder: "Brynn Halvorson", year: "2026" },
-  { label: "Digs, season", value: "631", holder: "Taylor Mandt", year: "2011" },
-  { label: "Blocks, season", value: "148", holder: "Taryn Nesseth", year: "2026" },
-  { label: "Aces, season", value: "96", holder: "Renae Floden", year: "2008" },
-  { label: "Team wins, season", value: "27", holder: "2013 Falcons", year: "2013" },
+  {
+    label: "Kills",
+    value: "487",
+    holder: "Kari Sundby",
+    year: "2014",
+    scope: "season",
+  },
+  {
+    label: "Assists",
+    value: "912",
+    holder: "Avery Lindgren",
+    year: "2026",
+    scope: "season",
+  },
+  {
+    label: "Digs",
+    value: "631",
+    holder: "Taylor Mandt",
+    year: "2011",
+    scope: "season",
+  },
+  {
+    label: "Blocks",
+    value: "148",
+    holder: "Taryn Nesseth",
+    year: "2026",
+    scope: "season",
+  },
+  {
+    label: "Aces",
+    value: "96",
+    holder: "Renae Floden",
+    year: "2008",
+    scope: "season",
+  },
+  {
+    label: "Team wins",
+    value: "27",
+    holder: "2013 Falcons",
+    year: "2013",
+    scope: "season",
+  },
+  {
+    label: "Kills",
+    value: "31",
+    holder: "Kari Sundby",
+    year: "2014",
+    scope: "match",
+  },
+  {
+    label: "Digs",
+    value: "42",
+    holder: "Brynn Halvorson",
+    year: "2026",
+    scope: "match",
+  },
+  {
+    label: "Assists",
+    value: "58",
+    holder: "Jenna Aune",
+    year: "2013",
+    scope: "match",
+  },
+  {
+    label: "Blocks",
+    value: "14",
+    holder: "Shelby Gunderson",
+    year: "2015",
+    scope: "match",
+  },
+  {
+    label: "Aces",
+    value: "11",
+    holder: "Renae Floden",
+    year: "2008",
+    scope: "match",
+  },
 ] as const;
 
 export const seasonHistory = [
@@ -739,77 +808,232 @@ export const seasonHistory = [
 
 export const careerLeaders = [
   {
-    category: "Career kills",
-    rows: [
-      { name: "Kari Sundby", value: "1,412", years: "2011-2014" },
-      { name: "Renae Floden", value: "1,188", years: "2005-2008" },
-      { name: "Josie Kvamme", value: "1,034", years: "2024-2026" },
-      { name: "Mikayla Berdahl", value: "981", years: "2016-2019" },
-      { name: "Danielle Stokke", value: "944", years: "2009-2012" },
-    ],
-  },
-  {
     category: "Career assists",
     rows: [
-      { name: "Avery Lindgren", value: "2,744", years: "2024-2026" },
-      { name: "Jenna Aune", value: "2,510", years: "2011-2014" },
-      { name: "Paige Solberg", value: "2,088", years: "2017-2020" },
-      { name: "Laura Dahl", value: "1,903", years: "2006-2009" },
-      { name: "Hallie Myrom", value: "1,742", years: "2020-2023" },
+      {
+        name: "Avery Lindgren",
+        value: "2,744",
+        years: "2024-2026",
+      },
+      {
+        name: "Jenna Aune",
+        value: "2,510",
+        years: "2011-2014",
+      },
+      {
+        name: "Paige Solberg",
+        value: "2,088",
+        years: "2017-2020",
+      },
+      {
+        name: "Laura Dahl",
+        value: "1,903",
+        years: "2006-2009",
+      },
+      {
+        name: "Hallie Myrom",
+        value: "1,742",
+        years: "2020-2023",
+      },
+      {
+        name: "Kendra Olson",
+        value: "1,611",
+        years: "2014-2017",
+      },
+      {
+        name: "Megan Haugen",
+        value: "1,498",
+        years: "2009-2012",
+      },
+      {
+        name: "Sarah Bakke",
+        value: "1,385",
+        years: "2003-2006",
+      },
+      {
+        name: "Ellie Nesland",
+        value: "1,274",
+        years: "2018-2021",
+      },
+      {
+        name: "Claire Tollefson",
+        value: "1,156",
+        years: "2012-2015",
+      },
     ],
   },
   {
-    category: "Career digs",
+    category: "Career kills",
     rows: [
-      { name: "Taylor Mandt", value: "1,996", years: "2008-2011" },
-      { name: "Brynn Halvorson", value: "1,702", years: "2024-2026" },
-      { name: "Emma Rosten", value: "1,588", years: "2015-2018" },
-      { name: "Kelsey Nygaard", value: "1,421", years: "2012-2015" },
-      { name: "Maria Hovland", value: "1,310", years: "2019-2022" },
+      {
+        name: "Kari Sundby",
+        value: "1,412",
+        years: "2011-2014",
+      },
+      {
+        name: "Renae Floden",
+        value: "1,188",
+        years: "2005-2008",
+      },
+      {
+        name: "Josie Kvamme",
+        value: "1,034",
+        years: "2024-2026",
+      },
+      {
+        name: "Mikayla Berdahl",
+        value: "981",
+        years: "2016-2019",
+      },
+      {
+        name: "Danielle Stokke",
+        value: "944",
+        years: "2009-2012",
+      },
+      {
+        name: "Amber Vigness",
+        value: "902",
+        years: "2013-2016",
+      },
+      {
+        name: "Brooke Larson",
+        value: "861",
+        years: "2007-2010",
+      },
+      {
+        name: "Hannah Pederson",
+        value: "819",
+        years: "2019-2022",
+      },
+      {
+        name: "Morgan Bergeson",
+        value: "784",
+        years: "2015-2018",
+      },
+      {
+        name: "Lindsey Haugen",
+        value: "741",
+        years: "2002-2005",
+      },
     ],
   },
   {
     category: "Career blocks",
     rows: [
-      { name: "Taryn Nesseth", value: "412", years: "2025-present" },
-      { name: "Shelby Gunderson", value: "398", years: "2013-2016" },
-      { name: "Anna Lysne", value: "371", years: "2007-2010" },
-      { name: "Tessa Fladeland", value: "344", years: "2018-2021" },
-      { name: "Nicole Birkeland", value: "318", years: "2003-2006" },
+      {
+        name: "Taryn Nesseth",
+        value: "412",
+        years: "2025-present",
+      },
+      {
+        name: "Shelby Gunderson",
+        value: "398",
+        years: "2013-2016",
+      },
+      {
+        name: "Anna Lysne",
+        value: "371",
+        years: "2007-2010",
+      },
+      {
+        name: "Tessa Fladeland",
+        value: "344",
+        years: "2018-2021",
+      },
+      {
+        name: "Nicole Birkeland",
+        value: "318",
+        years: "2003-2006",
+      },
+      {
+        name: "Kayla Thorson",
+        value: "296",
+        years: "2011-2014",
+      },
+      {
+        name: "Riley Sandberg",
+        value: "281",
+        years: "2016-2019",
+      },
+      {
+        name: "Paige Carlson",
+        value: "264",
+        years: "2009-2012",
+      },
+      {
+        name: "Jordan Amundson",
+        value: "249",
+        years: "2021-2024",
+      },
+      {
+        name: "Erica Nelson",
+        value: "233",
+        years: "2005-2008",
+      },
+    ],
+  },
+  {
+    category: "Career digs",
+    rows: [
+      {
+        name: "Taylor Mandt",
+        value: "1,996",
+        years: "2008-2011",
+      },
+      {
+        name: "Brynn Halvorson",
+        value: "1,702",
+        years: "2024-2026",
+      },
+      {
+        name: "Emma Rosten",
+        value: "1,588",
+        years: "2015-2018",
+      },
+      {
+        name: "Kelsey Nygaard",
+        value: "1,421",
+        years: "2012-2015",
+      },
+      {
+        name: "Maria Hovland",
+        value: "1,310",
+        years: "2019-2022",
+      },
+      {
+        name: "Ashley Swenson",
+        value: "1,244",
+        years: "2006-2009",
+      },
+      {
+        name: "Brittany Foss",
+        value: "1,178",
+        years: "2010-2013",
+      },
+      {
+        name: "Sydney Bjorklund",
+        value: "1,105",
+        years: "2017-2020",
+      },
+      {
+        name: "Katie Olson",
+        value: "1,042",
+        years: "2003-2006",
+      },
+      {
+        name: "Nora Aakre",
+        value: "986",
+        years: "2023-present",
+      },
     ],
   },
 ] as const;
 
-export const programMilestones = [
-  {
-    year: "2013",
-    title: "State tournament berth",
-    detail:
-      "A 27-5 season ended with the program's first trip to the Class A state tournament and a fifth-place finish.",
-  },
-  {
-    year: "2014",
-    title: "Section 8A runner-up",
-    detail:
-      "Kari Sundby set the single-season kills record on the way to a 24-7 campaign.",
-  },
-  {
-    year: "2019",
-    title: "Conference co-champions",
-    detail: "Shared the Pine to Prairie title at 9-3 and reached the section semifinals.",
-  },
-  {
-    year: "2023",
-    title: "21-win season",
-    detail: "The Falcons swept 10 conference opponents and returned to the section semifinals.",
-  },
-  {
-    year: "2026",
-    title: "19 wins and a section semifinal",
-    detail:
-      "Three all-conference selections and a program record 912 assists from the setter position.",
-  },
-] as const;
+export const programMilestones: {
+  year: string;
+  title: string;
+  detail: string;
+}[] = [];
 
 export const honors = [
   { season: "2026", items: ["Josie Kvamme — All-Conference", "Avery Lindgren — All-Conference", "Taryn Nesseth — All-Conference Honorable Mention", "Brynn Halvorson — Academic All-State"] },
