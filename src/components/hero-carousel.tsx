@@ -10,7 +10,18 @@ import {
   HeartIcon,
   PauseIcon,
   PlayIcon,
+  UsersIcon,
 } from "lucide-react";
+
+function SlideCtaIcon({ href }: { href?: string }) {
+  if (href === "/fundraising" || href === "/donate") {
+    return <HeartIcon className="size-4" />;
+  }
+  if (href === "/roster") {
+    return <UsersIcon className="size-4" />;
+  }
+  return <CalendarDaysIcon className="size-4" />;
+}
 
 import { Button } from "@/components/ui/button";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
@@ -117,9 +128,9 @@ export function HeroCarousel({
               asChild
               className="h-12 rounded-md bg-falcon-500 px-6 font-heading text-base font-bold tracking-wide uppercase shadow-lg shadow-falcon-900/30 transition-transform hover:bg-falcon-600 hover:-translate-y-0.5"
             >
-              <Link href="/schedule">
-                <CalendarDaysIcon className="size-4" />
-                Season schedule
+              <Link href={active.href ?? "/schedule"}>
+                <SlideCtaIcon href={active.href} />
+                {active.cta ?? "Season schedule"}
               </Link>
             </Button>
             <Button
@@ -127,9 +138,24 @@ export function HeroCarousel({
               variant="outline"
               className="h-12 rounded-md border-white/50 bg-navy-950/55 px-6 font-heading text-base font-bold tracking-wide text-white uppercase backdrop-blur transition-transform hover:-translate-y-0.5 hover:bg-navy-950/75 hover:text-white"
             >
-              <Link href="/donate">
-                <HeartIcon className="size-4" />
-                Support the Falcons
+              <Link
+                href={
+                  active.href === "/fundraising" || active.href === "/donate"
+                    ? "/schedule"
+                    : "/fundraising"
+                }
+              >
+                {active.href === "/fundraising" || active.href === "/donate" ? (
+                  <>
+                    <CalendarDaysIcon className="size-4" />
+                    Season schedule
+                  </>
+                ) : (
+                  <>
+                    <HeartIcon className="size-4" />
+                    Support the Falcons
+                  </>
+                )}
               </Link>
             </Button>
           </div>

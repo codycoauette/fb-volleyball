@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-21T22:08:12.000Z",
+  "updatedAt": "2026-11-24T15:39:01.000Z",
   "team": {
     "school": "Fertile-Beltrami High School",
     "program": "Falcons Volleyball",
@@ -160,22 +160,30 @@
   "currentSeason": "2026",
   "schedule": [
     {
-      "id": "2026-09-08-riverside-christian",
-      "date": "2026-09-08",
-      "time": "4:30 PM",
-      "opponent": "Riverside Christian",
-      "site": "Home",
-      "type": "Non-conference",
-      "venue": "Falcon Gymnasium"
-    },
-    {
       "id": "2026-09-10-win-e-mac",
       "date": "2026-09-10",
       "time": "7:30 PM",
       "opponent": "Win-E-Mac",
       "site": "Away",
-      "type": "Conference",
       "venue": "Win-E-Mac High School",
+      "type": "Conference",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-17",
+          "25-11",
+          "25-13"
+        ]
+      }
+    },
+    {
+      "id": "2026-09-12-blackduck",
+      "date": "2026-09-12",
+      "time": "8:30 AM",
+      "opponent": "Blackduck",
+      "site": "Neutral",
+      "venue": "Walker-Hackensack-Akeley High School",
+      "type": "Tournament",
       "result": {
         "outcome": "W",
         "sets": [
@@ -184,22 +192,58 @@
       }
     },
     {
-      "id": "2026-09-12-2026-wha-volleyball-invitational-tournament",
+      "id": "2026-09-12-parkers-prairie",
       "date": "2026-09-12",
-      "time": "8:30 AM",
-      "opponent": "2026 WHA Volleyball Invitational Tournament",
+      "time": "9:30 AM",
+      "opponent": "Parkers Prairie",
       "site": "Neutral",
+      "venue": "Walker-Hackensack-Akeley High School",
       "type": "Tournament",
-      "venue": "Walker-Hackensack-Akeley High School"
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "2-1"
+        ]
+      }
     },
     {
-      "id": "2026-09-15-sacred-heart-east-grand-forks",
+      "id": "2026-09-12-park-rapids-area",
+      "date": "2026-09-12",
+      "time": "1:00 PM",
+      "opponent": "Park Rapids Area",
+      "site": "Neutral",
+      "venue": "Walker-Hackensack-Akeley High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "2-1"
+        ]
+      }
+    },
+    {
+      "id": "2026-09-12-sacred-heart",
+      "date": "2026-09-12",
+      "time": "3:00 PM",
+      "opponent": "Sacred Heart",
+      "site": "Neutral",
+      "venue": "Walker-Hackensack-Akeley High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "L",
+        "sets": [
+          "0-2"
+        ]
+      }
+    },
+    {
+      "id": "2026-09-15-sacred-heart",
       "date": "2026-09-15",
-      "time": "7:15 PM",
-      "opponent": "Sacred Heart East Grand Forks",
+      "time": "7:30 PM",
+      "opponent": "Sacred Heart",
       "site": "Away",
-      "type": "Non-conference",
       "venue": "Sacred Heart School",
+      "type": "Non-conference",
       "result": {
         "outcome": "L",
         "sets": [
@@ -213,12 +257,16 @@
       "time": "7:15 PM",
       "opponent": "Red Lake Falls",
       "site": "Home",
-      "type": "Non-conference",
       "venue": "Falcon Gymnasium",
+      "type": "Non-conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-2"
+          "25-17",
+          "21-25",
+          "20-25",
+          "25-21",
+          "15-13"
         ]
       }
     },
@@ -228,12 +276,14 @@
       "time": "7:15 PM",
       "opponent": "Crookston",
       "site": "Home",
-      "type": "Non-conference",
       "venue": "Falcon Gymnasium",
+      "type": "Non-conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-0"
+          "25-12",
+          "25-11",
+          "25-11"
         ]
       }
     },
@@ -243,12 +293,14 @@
       "time": "7:15 PM",
       "opponent": "Park Christian",
       "site": "Away",
-      "type": "Conference",
       "venue": "Park Christian School",
+      "type": "Conference",
       "result": {
         "outcome": "L",
         "sets": [
-          "0-3"
+          "16-25",
+          "20-25",
+          "19-25"
         ]
       }
     },
@@ -258,27 +310,32 @@
       "time": "7:30 PM",
       "opponent": "Red Lake County Central",
       "site": "Away",
-      "type": "Non-conference",
       "venue": "Red Lake County High School",
+      "type": "Non-conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-1"
+          "20-25",
+          "25-23",
+          "25-19",
+          "25-19"
         ]
       }
     },
     {
-      "id": "2026-09-29-nce-uh",
+      "id": "2026-09-29-nce-u-h",
       "date": "2026-09-29",
       "time": "7:15 PM",
-      "opponent": "NCE/UH",
+      "opponent": "NCE/U-H",
       "site": "Home",
-      "type": "Non-conference",
       "venue": "Falcon Gymnasium",
+      "type": "Conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-0"
+          "25-12",
+          "25-18",
+          "25-11"
         ]
       }
     },
@@ -288,23 +345,83 @@
       "time": "7:15 PM",
       "opponent": "Bagley",
       "site": "Away",
-      "type": "Conference",
       "venue": "Bagley High School",
+      "type": "Conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-1"
+          "19-25",
+          "25-17",
+          "25-20",
+          "25-11"
         ]
       }
     },
     {
-      "id": "2026-10-03-barnesville-vb-tournament",
+      "id": "2026-10-03-barnesville",
       "date": "2026-10-03",
       "time": "9:00 AM",
-      "opponent": "Barnesville VB Tournament",
-      "site": "Neutral",
+      "opponent": "Barnesville",
+      "site": "Away",
+      "venue": "Barnesville High School",
       "type": "Tournament",
-      "venue": "Barnesville High School"
+      "result": {
+        "outcome": "L",
+        "sets": [
+          "20-25",
+          "25-22",
+          "11-15"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-03-breckenridge",
+      "date": "2026-10-03",
+      "time": "10:00 AM",
+      "opponent": "Breckenridge",
+      "site": "Neutral",
+      "venue": "Barnesville High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-15",
+          "25-15"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-03-frazee",
+      "date": "2026-10-03",
+      "time": "12:00 PM",
+      "opponent": "Frazee",
+      "site": "Neutral",
+      "venue": "Barnesville High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-17",
+          "25-14"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-03-menahga",
+      "date": "2026-10-03",
+      "time": "1:00 PM",
+      "opponent": "Menahga",
+      "site": "Neutral",
+      "venue": "Barnesville High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "L",
+        "sets": [
+          "25-17",
+          "23-25",
+          "14-16"
+        ]
+      }
     },
     {
       "id": "2026-10-05-east-grand-forks",
@@ -312,12 +429,16 @@
       "time": "7:15 PM",
       "opponent": "East Grand Forks",
       "site": "Away",
-      "type": "Non-conference",
       "venue": "East Grand Forks High School",
+      "type": "Non-conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-2"
+          "22-25",
+          "25-21",
+          "11-25",
+          "25-22",
+          "15-11"
         ]
       }
     },
@@ -327,8 +448,8 @@
       "time": "7:30 PM",
       "opponent": "Ada-Borup-West",
       "site": "Away",
-      "type": "Non-conference",
       "venue": "Ada-Borup-West High School",
+      "type": "Conference",
       "result": {
         "outcome": "W",
         "sets": [
@@ -340,94 +461,221 @@
       "id": "2026-10-08-lake-park-audubon",
       "date": "2026-10-08",
       "time": "7:30 PM",
-      "opponent": "Lake Park Audubon",
+      "opponent": "Lake Park-Audubon",
       "site": "Home",
-      "type": "Conference",
       "venue": "Falcon Gymnasium",
+      "type": "Conference",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-0"
+          "25-11",
+          "25-23",
+          "25-13"
         ]
       }
     },
     {
       "id": "2026-10-12-climax-fisher",
       "date": "2026-10-12",
-      "time": "7:20 PM",
-      "opponent": "Climax-Fisher",
+      "time": "7:15 PM",
+      "opponent": "Climax/Fisher",
       "site": "Home",
-      "type": "Conference",
       "venue": "Falcon Gymnasium",
+      "type": "Conference",
       "result": {
         "outcome": "L",
         "sets": [
-          "2-3"
+          "25-19",
+          "26-25",
+          "15-24",
+          "21-25",
+          "13-15"
         ]
       }
     },
     {
-      "id": "2026-10-17-varsity-frostbite-tournament",
+      "id": "2026-10-17-red-lake-county-central",
       "date": "2026-10-17",
       "time": "9:00 AM",
-      "opponent": "Varsity Frostbite Tournament",
+      "opponent": "Red Lake County Central",
       "site": "Neutral",
+      "venue": "Red Lake Falls High School",
       "type": "Tournament",
-      "venue": "Red Lake Falls High School, J.A. Hughes Elementary"
+      "result": {
+        "outcome": "L",
+        "sets": [
+          "18-25",
+          "14-25"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-17-badger-greenbush-middle-river",
+      "date": "2026-10-17",
+      "time": "12:00 PM",
+      "opponent": "Badger/Greenbush-Middle River",
+      "site": "Neutral",
+      "venue": "Red Lake Falls High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-11",
+          "25-13"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-17-clearbrook-gonvick",
+      "date": "2026-10-17",
+      "time": "2:00 PM",
+      "opponent": "Clearbrook-Gonvick",
+      "site": "Neutral",
+      "venue": "Red Lake Falls High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-13",
+          "25-11"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-17-northern-freeze",
+      "date": "2026-10-17",
+      "time": "4:00 PM",
+      "opponent": "Northern Freeze",
+      "site": "Neutral",
+      "venue": "Red Lake Falls High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-17",
+          "25-18"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-17-red-lake-county-central-2",
+      "date": "2026-10-17",
+      "time": "5:00 PM",
+      "opponent": "Red Lake County Central",
+      "site": "Neutral",
+      "venue": "Red Lake Falls High School",
+      "type": "Tournament",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-15",
+          "21-25",
+          "15-5"
+        ]
+      }
     },
     {
       "id": "2026-10-19-mahnomen-waubun",
       "date": "2026-10-19",
       "time": "7:15 PM",
-      "opponent": "Mahnomen-Waubun",
+      "opponent": "Mahnomen/Waubun",
       "site": "Home",
-      "type": "Non-conference",
-      "venue": "Falcon Gymnasium"
+      "venue": "Falcon Gymnasium",
+      "type": "Conference",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-16",
+          "25-11",
+          "25-17"
+        ]
+      }
     },
     {
       "id": "2026-10-22-fosston",
       "date": "2026-10-22",
       "time": "7:15 PM",
       "opponent": "Fosston",
-      "site": "Home",
+      "site": "Away",
+      "venue": "Fosston High School",
       "type": "Conference",
-      "venue": "Falcon Gymnasium",
       "result": {
         "outcome": "W",
         "sets": [
-          "3-2"
+          "19-25",
+          "25-17",
+          "25-23",
+          "17-25",
+          "15-11"
         ]
       }
     },
     {
-      "id": "2026-10-28-tbd",
+      "id": "2026-10-28-blackduck",
       "date": "2026-10-28",
       "time": "7:00 PM",
-      "opponent": "TBD",
+      "opponent": "Blackduck",
       "site": "Home",
+      "venue": "Falcon Gymnasium",
       "type": "Section",
-      "venue": "Falcon Gymnasium"
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-17",
+          "25-19",
+          "25-14"
+        ]
+      }
+    },
+    {
+      "id": "2026-10-30-goodridge-grygla",
+      "date": "2026-10-30",
+      "time": "7:00 PM",
+      "opponent": "Goodridge/Grygla",
+      "site": "Home",
+      "venue": "Falcon Gymnasium",
+      "type": "Section",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-16",
+          "25-18",
+          "25-20"
+        ]
+      }
     },
     {
       "id": "2026-11-02-climax-fisher",
       "date": "2026-11-02",
-      "time": "8:00 PM",
-      "opponent": "Climax-Fisher",
+      "time": "7:30 PM",
+      "opponent": "Climax/Fisher",
       "site": "Neutral",
-      "type": "Section"
+      "venue": "University of Minnesota-Crookston",
+      "type": "Section",
+      "result": {
+        "outcome": "W",
+        "sets": [
+          "25-19",
+          "26-24",
+          "21-25",
+          "25-23"
+        ]
+      }
     },
     {
-      "id": "2026-11-06-sacred-heart-east-grand-forks",
+      "id": "2026-11-06-sacred-heart",
       "date": "2026-11-06",
       "time": "7:30 PM",
-      "opponent": "Sacred Heart East Grand Forks",
+      "opponent": "Sacred Heart",
       "site": "Neutral",
-      "type": "Section",
       "venue": "University of Minnesota-Crookston",
+      "type": "Section",
       "result": {
         "outcome": "L",
         "sets": [
-          "0-3"
+          "18-25",
+          "15-25",
+          "10-25"
         ]
       }
     }
@@ -436,10 +684,10 @@
   "lastSeasonResults": [],
   "seasonSnapshot": {
     "season": "2026",
-    "overall": "16-8",
-    "conference": "4-2",
-    "finish": "Section 8A playoffs",
-    "note": "Pine to Prairie Conference \u2014 3rd place. Roster and schedule from MSHSL 2026 girls volleyball."
+    "overall": "23-8",
+    "conference": "7-2",
+    "finish": "Section 8A finalist",
+    "note": "Pine to Prairie Conference. Schedule and records from Minnesota-Scores.net for the 2026 season."
   },
   "programRecords": [
     {
@@ -494,9 +742,9 @@
   "seasonHistory": [
     {
       "season": "2026",
-      "overall": "16-8",
-      "conference": "4-2",
-      "postseason": "Section 8A playoffs"
+      "overall": "23-8",
+      "conference": "7-2",
+      "postseason": "Section 8A finalist"
     },
     {
       "season": "2025",

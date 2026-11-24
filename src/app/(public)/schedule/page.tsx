@@ -22,10 +22,10 @@ export default async function SchedulePage() {
   return (
     <>
       <PageHero
-        photo={heroPhotos[0]}
+        photo={heroPhotos[1]}
         eyebrow="Falcons volleyball"
         title={`${currentSeason} Schedule`}
-        description={`${schedule.length} dates, ${homeMatches} of them in ${team.gym}. Conference matches start at 7:15 PM with JV at 6:15. Dates move when the weather does — check back the week of the match.`}
+        description={`${schedule.length} matches, ${homeMatches} of them in ${team.gym}. Overall 23-8 · conference 7-2. Results from Minnesota-Scores.net.`}
       >
         <div className="flex flex-wrap gap-3">
           <Button

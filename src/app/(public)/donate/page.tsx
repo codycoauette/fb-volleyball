@@ -33,7 +33,7 @@ export default async function DonatePage() {
   return (
     <>
       <PageHero
-        photo={heroPhotos[1]}
+        photo={heroPhotos[3]}
         eyebrow="Donation portal"
         title="Give to Falcon Volleyball"
         description="One-time or monthly, designated or general. Gifts go to the volleyball activity account at Fertile-Beltrami High School and are spent by the booster club on the needs listed on the fundraising page."

@@ -4,6 +4,8 @@
  *
  * `position` is the CSS object-position used when the photo is cropped to a wide
  * hero; pick the spot that keeps players in frame.
+ *
+ * Carousel slides map to site sections: team home, schedule, roster, support.
  */
 export type Photo = {
   src: string;
@@ -13,48 +15,58 @@ export type Photo = {
   headline: string;
   blurb: string;
   caption: string;
+  href?: string;
+  cta?: string;
 };
 
 export const heroPhotos: Photo[] = [
   {
+    src: "/photos/team-huddle-section.jpg",
+    alt: "The Falcons huddle in warmups with one finger raised before a section tournament match.",
+    position: "50% 45%",
+    kicker: "Fertile-Beltrami volleyball",
+    headline: "Fly together",
+    blurb:
+      "One gym, one roster, one flock. Falcons volleyball is built on trust, grind, and the kid next to you.",
+    caption: "Pregame huddle — one team, one purpose",
+    href: "/roster",
+    cta: "Meet the roster",
+  },
+  {
     src: "/photos/hands-up-home-crowd.jpg",
     alt: "Falcons players raise their hands to signal a play as a packed home crowd watches from the bleachers.",
     position: "50% 38%",
-    kicker: "Falcon Gymnasium",
-    headline: "Fall nights belong to the Falcons",
+    kicker: "Schedule",
+    headline: "Match nights in Fertile",
     blurb:
-      "Doors open an hour before serve. Bring the family, find a spot in the bleachers and get loud.",
-    caption: "A full house for senior night in Fertile",
+      "Conference nights, tournament Saturdays, and section play — every date, result, and gym on the calendar.",
+    caption: "A full house for a home match in Falcon Gymnasium",
+    href: "/schedule",
+    cta: "See the schedule",
   },
   {
     src: "/photos/point-celebration-crowd.jpg",
     alt: "Five Falcons players shout and celebrate a point at the net in front of a full student section.",
     position: "50% 42%",
-    kicker: "Section 8A",
-    headline: "Every point, together",
+    kicker: "Roster",
+    headline: "Names on the jersey",
     blurb:
-      "Fourteen players, three captains, and a student section that travels. This is Falcons volleyball.",
+      "Seniors leading, underclassmen climbing. Numbers, positions, and the coaches who run practice every day.",
     caption: "Celebrating a block in front of the student section",
+    href: "/roster",
+    cta: "View the roster",
   },
   {
     src: "/photos/celebration-home-net.jpg",
     alt: "Falcons teammates hug and laugh after winning a long rally at the net.",
     position: "50% 40%",
-    kicker: "This is the program",
-    headline: "Built on the team in front of you",
+    kicker: "Support the program",
+    headline: "Keep the Falcons flying",
     blurb:
-      "Two straight seasons of at least 18 wins, built by players who grew up in this gym.",
+      "Boosters, sponsors, and fans fund travel, gear, and the next generation in this gym.",
     caption: "Match point, and the bench empties",
-  },
-  {
-    src: "/photos/team-huddle-section.jpg",
-    alt: "The Falcons huddle in warmups with one finger raised before a section tournament match.",
-    position: "50% 45%",
-    kicker: "Postseason",
-    headline: "One more match",
-    blurb:
-      "The section tournament is the goal every October, and the Falcons have been there eleven straight falls.",
-    caption: "Pregame huddle before the section semifinal",
+    href: "/fundraising",
+    cta: "Support the Falcons",
   },
 ];
 

@@ -41,7 +41,7 @@ export default async function HistoryPage() {
   return (
     <>
       <PageHero
-        photo={heroPhotos[2]}
+        photo={heroPhotos[0]}
         eyebrow="Record book"
         title="History & Stats"
         description="Program records, season-by-season results, career leaders and postseason finishes. Numbers come from match books kept by the coaching staff and student statisticians."

@@ -42,7 +42,10 @@ export default async function HomePage() {
       label: `${seasonSnapshot.season} overall record`,
     },
     { figure: seasonSnapshot.conference, label: `${team.conference} play` },
-    { figure: "11", label: "Section tournament trips since 2013" },
+    {
+      figure: seasonSnapshot.finish.includes("finalist") ? "Final" : "8A",
+      label: `${seasonSnapshot.season} ${seasonSnapshot.finish}`,
+    },
     {
       figure: `${roster.length}`,
       label: `Players on the varsity roster · ${seniors} seniors`,

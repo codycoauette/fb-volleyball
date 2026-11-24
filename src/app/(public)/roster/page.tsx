@@ -22,7 +22,7 @@ export default async function RosterPage() {
   return (
     <>
       <PageHero
-        photo={heroPhotos[3]}
+        photo={heroPhotos[2]}
         eyebrow={`${currentSeason} varsity squad`}
         title="Roster"
         description={`${roster.length} varsity players for the ${currentSeason} season. Jersey numbers match the MSHSL roster.`}

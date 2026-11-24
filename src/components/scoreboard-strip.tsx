@@ -15,15 +15,10 @@ export function ScoreboardStripSkeleton() {
 }
 
 export async function ScoreboardStrip() {
-  const {
-    schedule,
-    lastSeason,
-    lastSeasonResults,
-    seasonSnapshot,
-  } = await getSiteContent();
+  const { schedule, seasonSnapshot } = await getSiteContent();
 
   const upcoming = nextMatch(schedule);
-  const lastResult = lastSeasonResults.filter((match) => match.result).at(-1);
+  const lastResult = [...schedule].reverse().find((match) => match.result);
 
   return (
     <section className="border-b border-white/10 bg-navy-900 text-white">
@@ -76,12 +71,16 @@ export async function ScoreboardStrip() {
                 {lastResult.result.sets.join(" · ")}
               </p>
             </>
-          ) : null}
+          ) : (
+            <p className="mt-1.5 text-sm text-navy-200">No results posted yet.</p>
+          )}
         </div>
 
         <div className="flex items-center justify-between gap-4 border-t border-white/10 py-5 sm:border-t-0 sm:border-l sm:pl-6">
           <div>
-            <p className="eyebrow text-falcon-300">{lastSeason} record</p>
+            <p className="eyebrow text-falcon-300">
+              {seasonSnapshot.season} record
+            </p>
             <p className="mt-1.5 font-heading text-xl font-bold tracking-tight uppercase tabular-nums">
               {seasonSnapshot.overall}
             </p>
