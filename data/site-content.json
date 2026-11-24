@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-24T15:55:15.000Z",
+  "updatedAt": "2026-11-24T16:08:21.000Z",
   "team": {
     "school": "Fertile-Beltrami High School",
     "program": "Falcons Volleyball",
@@ -1237,7 +1237,7 @@
     {
       "label": "Support the Falcons",
       "href": "/fundraising",
-      "detail": "Campaigns, sponsors and events"
+      "detail": "Online giving \u2014 coming soon"
     }
   ]
 }

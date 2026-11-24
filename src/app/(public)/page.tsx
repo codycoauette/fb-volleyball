@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 
 import { CountUp } from "@/components/count-up";
-import { GoalMeter } from "@/components/goal-meter";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { SectionHeading } from "@/components/page-hero";
 import { PhotoRail } from "@/components/photo-rail";
@@ -32,8 +31,7 @@ const icons = {
 } as const;
 
 export default async function HomePage() {
-  const { campaigns, quickLinks, roster, seasonSnapshot, team } = await getSiteContent();
-  const featured = campaigns[0];
+  const { quickLinks, roster, seasonSnapshot, team } = await getSiteContent();
   const seniors = roster.filter((player) => player.grade === "Senior").length;
 
   const stats = [
@@ -156,40 +154,32 @@ export default async function HomePage() {
           className="object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/40" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1fr_26rem] lg:items-center">
-          <Reveal>
+        <div className="relative mx-auto max-w-6xl px-4 py-16">
+          <Reveal className="max-w-2xl">
             <p className="eyebrow text-falcon-300">Fund the program</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight uppercase sm:text-4xl">
-              {featured.name}
+              Online giving — coming soon
             </h2>
-            <p className="mt-4 max-w-xl text-navy-100">{featured.summary}</p>
+            <p className="mt-4 max-w-xl text-navy-100">
+              Campaigns, sponsorships, and the donation portal are being set up.
+              Check back soon, or reach the activities office about a gift in the
+              meantime.
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 asChild
                 className="h-12 rounded-md bg-falcon-500 px-6 font-heading text-base font-bold tracking-wide uppercase transition-transform hover:-translate-y-0.5 hover:bg-falcon-600"
               >
-                <Link href="/donate">Give today</Link>
+                <Link href="/fundraising">Fundraising updates</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="h-12 rounded-md border-white/40 bg-white/5 px-6 font-heading text-base font-bold tracking-wide text-white uppercase hover:bg-white/15 hover:text-white"
               >
-                <Link href="/fundraising">All campaigns & sponsorships</Link>
+                <Link href="/donate">Donate page</Link>
               </Button>
             </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <Card className="border-0 bg-white/10 text-white ring-1 ring-white/15 backdrop-blur">
-              <CardContent>
-                <GoalMeter
-                  onDark
-                  raisedCents={featured.raisedCents}
-                  goalCents={featured.goalCents}
-                />
-                <p className="mt-4 text-xs text-navy-200">{featured.closes}</p>
-              </CardContent>
-            </Card>
           </Reveal>
         </div>
       </section>

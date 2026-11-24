@@ -1171,5 +1171,5 @@ export const quickLinks = [
   { label: "Season schedule", href: "/schedule", detail: "Match dates, times and sites" },
   { label: "Varsity roster", href: "/roster", detail: "Players, positions and coaches" },
   { label: "Record book", href: "/history", detail: "Program records and season history" },
-  { label: "Support the Falcons", href: "/fundraising", detail: "Campaigns, sponsors and events" },
+  { label: "Support the Falcons", href: "/fundraising", detail: "Online giving — coming soon" },
 ] as const;

@@ -63,10 +63,10 @@ export const heroPhotos: Photo[] = [
     kicker: "Support the program",
     headline: "Keep the Falcons flying",
     blurb:
-      "Boosters, sponsors, and fans fund travel, gear, and the next generation in this gym.",
+      "Online fundraising is coming soon. Boosters and fans still keep this program in the air.",
     caption: "Match point, and the bench empties",
     href: "/fundraising",
-    cta: "Support the Falcons",
+    cta: "Coming soon",
   },
 ];
 
