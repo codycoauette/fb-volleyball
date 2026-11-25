@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   CalendarDaysIcon,
+  GraduationCapIcon,
   HandCoinsIcon,
   SchoolIcon,
   TrophyIcon,
@@ -16,6 +17,7 @@ const icons = {
   roster: UsersIcon,
   schedule: CalendarDaysIcon,
   history: TrophyIcon,
+  college: GraduationCapIcon,
   fundraising: HandCoinsIcon,
 } as const;
 

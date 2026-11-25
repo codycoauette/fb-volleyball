@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
+  GraduationCapIcon,
   HeartIcon,
   TrophyIcon,
   UsersIcon,
@@ -27,6 +28,7 @@ const icons = {
   "/schedule": CalendarDaysIcon,
   "/roster": UsersIcon,
   "/history": TrophyIcon,
+  "/college": GraduationCapIcon,
   "/fundraising": HeartIcon,
 } as const;
 
@@ -81,10 +83,10 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Start here"
             title="Everything Falcon fans need"
-            description="Four pages, kept current by the coaching staff and the booster club."
+            description="Schedule, roster, records, college alumni, and ways to support — kept current by the coaching staff."
           />
         </Reveal>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {quickLinks.map((link, slot) => {
             const Icon = icons[link.href as keyof typeof icons] ?? CalendarDaysIcon;
             const photo = heroPhotos[slot % heroPhotos.length];

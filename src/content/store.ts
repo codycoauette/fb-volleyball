@@ -28,13 +28,21 @@ async function fileExists(filePath: string) {
   }
 }
 
+/** Fill fields added after an older site-content.json was saved. */
+function normalizeContent(content: SiteContent): SiteContent {
+  return {
+    ...content,
+    collegeAthletes: content.collegeAthletes ?? [],
+  };
+}
+
 async function readContent(): Promise<SiteContent> {
   if (!(await fileExists(CONTENT_PATH))) {
     return getSeedContent();
   }
 
   const raw = await fs.readFile(CONTENT_PATH, "utf8");
-  return JSON.parse(raw) as SiteContent;
+  return normalizeContent(JSON.parse(raw) as SiteContent);
 }
 
 async function writeContent(content: SiteContent): Promise<SiteContent> {

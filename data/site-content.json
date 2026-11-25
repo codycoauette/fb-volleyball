@@ -98,28 +98,28 @@
       "name": "Aryanna Grunwald",
       "grade": "Senior",
       "position": "Defensive Specialist",
-      "height": "\u2014"
+      "height": "—"
     },
     {
       "number": 10,
       "name": "Elly Gorder",
       "grade": "Senior",
       "position": "Middle Blocker",
-      "height": "\u2014"
+      "height": "—"
     },
     {
       "number": 11,
       "name": "Hadley Petry",
       "grade": "Sophomore",
       "position": "Outside Hitter",
-      "height": "\u2014"
+      "height": "—"
     },
     {
       "number": 12,
       "name": "Gracie Anderson",
       "grade": "Sophomore",
       "position": "Middle Blocker",
-      "height": "\u2014"
+      "height": "—"
     },
     {
       "number": 13,
@@ -140,7 +140,7 @@
       "name": "Kora Benson",
       "grade": "Freshman",
       "position": "Outside Hitter",
-      "height": "\u2014"
+      "height": "—"
     },
     {
       "number": 18,
@@ -1063,25 +1063,25 @@
     {
       "season": "2026",
       "items": [
-        "Josie Kvamme \u2014 All-Conference",
-        "Avery Lindgren \u2014 All-Conference",
-        "Taryn Nesseth \u2014 All-Conference Honorable Mention",
-        "Brynn Halvorson \u2014 Academic All-State"
+        "Josie Kvamme — All-Conference",
+        "Avery Lindgren — All-Conference",
+        "Taryn Nesseth — All-Conference Honorable Mention",
+        "Brynn Halvorson — Academic All-State"
       ]
     },
     {
       "season": "2025",
       "items": [
-        "Josie Kvamme \u2014 All-Conference Honorable Mention",
-        "Avery Lindgren \u2014 All-Conference",
-        "Team \u2014 MSHSL Academic Gold Award"
+        "Josie Kvamme — All-Conference Honorable Mention",
+        "Avery Lindgren — All-Conference",
+        "Team — MSHSL Academic Gold Award"
       ]
     },
     {
       "season": "2024",
       "items": [
-        "Hallie Myrom \u2014 All-Conference",
-        "Team \u2014 Section 8A Sportsmanship Award"
+        "Hallie Myrom — All-Conference",
+        "Team — Section 8A Sportsmanship Award"
       ]
     }
   ],
@@ -1235,9 +1235,15 @@
       "detail": "Program records and season history"
     },
     {
+      "label": "College athletes",
+      "href": "/college",
+      "detail": "Alumni who played volleyball in college"
+    },
+    {
       "label": "Support the Falcons",
       "href": "/fundraising",
-      "detail": "Online giving \u2014 coming soon"
+      "detail": "Online giving — coming soon"
     }
-  ]
+  ],
+  "collegeAthletes": []
 }
