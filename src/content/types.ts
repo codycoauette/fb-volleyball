@@ -97,6 +97,14 @@ export type HonorYear = {
   items: string[];
 };
 
+/** Past varsity players who went on to play college volleyball. */
+export type CollegeAthlete = {
+  name: string;
+  college: string;
+  /** High school graduation year (e.g. "2022"). */
+  graduationYear: string;
+};
+
 export type Campaign = {
   id: string;
   name: string;
@@ -151,6 +159,7 @@ export type SiteContent = {
   careerLeaders: LeaderBoard[];
   programMilestones: Milestone[];
   honors: HonorYear[];
+  collegeAthletes: CollegeAthlete[];
   campaigns: Campaign[];
   sponsorTiers: SponsorTier[];
   fundraisingEvents: FundraisingEvent[];
@@ -182,6 +191,11 @@ export const PORTAL_SECTIONS = [
   { slug: "roster", label: "Roster & coaches", description: "Players and staff" },
   { slug: "schedule", label: "Schedule", description: "This season and last season" },
   { slug: "history", label: "History & stats", description: "Records, leaders, honors" },
+  {
+    slug: "college",
+    label: "College athletes",
+    description: "Alumni who played in college",
+  },
   { slug: "fundraising", label: "Fundraising", description: "Campaigns, sponsors, events" },
 ] as const;
 

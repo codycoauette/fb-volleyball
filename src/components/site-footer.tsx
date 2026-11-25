@@ -17,6 +17,7 @@ const columns = [
       { href: "/schedule", label: "Schedule" },
       { href: "/roster", label: "Roster & coaches" },
       { href: "/history", label: "History & stats" },
+      { href: "/college", label: "College athletes" },
     ],
   },
   {

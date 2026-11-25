@@ -2,6 +2,7 @@ import {
   campaigns,
   careerLeaders,
   coaches,
+  collegeAthletes,
   currentSeason,
   designations,
   fundraisingEvents,
@@ -22,6 +23,7 @@ import {
 import type {
   Campaign,
   Coach,
+  CollegeAthlete,
   Designation,
   FaqItem,
   FundraisingEvent,
@@ -65,6 +67,9 @@ export function getSeedContent(): SiteContent {
       season: h.season,
       items: [...h.items],
     })) as HonorYear[],
+    collegeAthletes: collegeAthletes.map((a) => ({
+      ...a,
+    })) as CollegeAthlete[],
     campaigns: campaigns.map((c) => ({ ...c })) as Campaign[],
     sponsorTiers: sponsorTiers.map((t) => ({
       ...t,

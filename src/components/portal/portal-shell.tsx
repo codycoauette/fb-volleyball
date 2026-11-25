@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   CalendarDaysIcon,
+  GraduationCapIcon,
   HandCoinsIcon,
   LayoutDashboardIcon,
   LogOutIcon,
@@ -22,6 +23,7 @@ const icons = {
   roster: UsersIcon,
   schedule: CalendarDaysIcon,
   history: TrophyIcon,
+  college: GraduationCapIcon,
   fundraising: HandCoinsIcon,
 } as const;
 

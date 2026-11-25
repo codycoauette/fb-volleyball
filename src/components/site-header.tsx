@@ -22,6 +22,7 @@ const nav = [
   { href: "/schedule", label: "Schedule" },
   { href: "/roster", label: "Roster" },
   { href: "/history", label: "History & Stats" },
+  { href: "/college", label: "College" },
   { href: "/fundraising", label: "Support Us" },
 ];
 

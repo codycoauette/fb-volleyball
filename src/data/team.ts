@@ -1035,6 +1035,13 @@ export const programMilestones: {
   detail: string;
 }[] = [];
 
+/** Past players who continued volleyball in college. Edit via /portal/college. */
+export const collegeAthletes: {
+  name: string;
+  college: string;
+  graduationYear: string;
+}[] = [];
+
 export const honors = [
   { season: "2026", items: ["Josie Kvamme — All-Conference", "Avery Lindgren — All-Conference", "Taryn Nesseth — All-Conference Honorable Mention", "Brynn Halvorson — Academic All-State"] },
   { season: "2025", items: ["Josie Kvamme — All-Conference Honorable Mention", "Avery Lindgren — All-Conference", "Team — MSHSL Academic Gold Award"] },
@@ -1171,5 +1178,10 @@ export const quickLinks = [
   { label: "Season schedule", href: "/schedule", detail: "Match dates, times and sites" },
   { label: "Varsity roster", href: "/roster", detail: "Players, positions and coaches" },
   { label: "Record book", href: "/history", detail: "Program records and season history" },
+  {
+    label: "College athletes",
+    href: "/college",
+    detail: "Alumni who played volleyball in college",
+  },
   { label: "Support the Falcons", href: "/fundraising", detail: "Online giving — coming soon" },
 ] as const;
